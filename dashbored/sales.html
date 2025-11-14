@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sales / POS Insights</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🧾</div>
+      <h1>Sales / POS Insights</h1>
+      <a class="back" href="../admin.html">← Back to Admin</a>
+    </div>
+
+    <div class="hero blue">
+      <div class="icon">🧾</div>
+      <div class="meta">
+        <h2>Analyze daily sales and cashier transactions</h2>
+        <p>Real-time totals, transaction history, top-selling items, and filters by date, cashier, and payment type.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <input type="date" />
+        <select><option>All cashiers</option></select>
+        <select><option>All payments</option></select>
+        <button id="exportCsvBtn" class="btn">Export CSV</button>
+      </div>
+
+      <div style="height:280px;">
+        <canvas id="chart-sales" class="sample-chart" data-page="sales"></canvas>
+      </div>
+
+      <div id="topItems"></div>
+
+      <p class="footer-note">This page now connects to `localStorage.bakery_app_v1` when available. Use the date/cashier/payment filters to refine the chart and see top items.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

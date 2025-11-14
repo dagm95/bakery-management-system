@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Profits / Financial Analytics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">💰</div>
+      <h1>Profits / Financial Analytics</h1>
+      <a class="back" href="../admin.html">← Back to Admin</a>
+    </div>
+
+    <div class="hero orange">
+      <div class="icon">💰</div>
+      <div class="meta">
+        <h2>Analyze profits and margins</h2>
+        <p>Compare income vs expenses, view margins and growth trends across categories.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <select><option>Daily</option><option>Weekly</option><option>Monthly</option></select>
+      </div>
+
+      <div style="height:280px;">
+        <canvas id="chart-profits" class="sample-chart" data-page="profits"></canvas>
+      </div>
+
+      <p class="footer-note">Hook this view to expense and sales data to compute profits over time.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

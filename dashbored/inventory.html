@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inventory / Stock Status</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">📦</div>
+      <h1>Inventory / Stock Status</h1>
+      <a class="back" href="../admin.html">← Back to Admin</a>
+    </div>
+
+    <div class="hero green">
+      <div class="icon">📦</div>
+      <div class="meta">
+        <h2>Monitor stock levels and low-stock alerts</h2>
+        <p>Live ingredient levels, reorder suggestions and usage trends for ingredients and finished goods.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <input type="text" placeholder="Search ingredient or product" />
+        <select><option>All categories</option></select>
+      </div>
+
+      <div style="height:280px;">
+        <canvas id="chart-inventory" class="sample-chart" data-page="inventory"></canvas>
+      </div>
+      <div id="lowStock" style="margin-top:12px"></div>
+
+      <p class="footer-note">This view shows low-stock alerts when `localStorage.bakery_app_v1` contains an `inventory` or `stock` array. If none exists, it shows demand (top sold items) to help decide restocking.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Security / System Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🔐</div>
+      <h1>Security / System Settings</h1>
+      <a class="back" href="../admin.html">← Back to Admin</a>
+    </div>
+
+    <div class="hero red">
+      <div class="icon">🔐</div>
+      <div class="meta">
+        <h2>Manage accounts, backups and access control</h2>
+        <p>Configure roles, backup/restore points, activity logs and dashboard preferences.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <button>Manage Users</button>
+        <button>Backups</button>
+      </div>
+
+      <div style="height:280px;">
+        <canvas id="chart-security" class="sample-chart" data-page="security"></canvas>
+      </div>
+
+      <p class="footer-note">Add user administration forms, password reset flows, and log viewers here.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

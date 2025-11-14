@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bakery Production Overview</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🍞</div>
+      <h1>Bakery Production Overview</h1>
+      <a class="back" href="../admin.html">← Back to Admin</a>
+    </div>
+
+    <div class="hero brown">
+      <div class="icon">🍞</div>
+      <div class="meta">
+        <h2>Production reports and ingredient usage</h2>
+        <p>Details from bakery managers about items baked, ingredients used and waste generated.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <select><option>All ovens</option></select>
+        <input type="date" />
+      </div>
+
+      <div style="height:280px;">
+        <canvas id="chart-production" class="sample-chart" data-page="production"></canvas>
+      </div>
+
+      <p class="footer-note">Use this view to compare production vs sales and measure efficiency.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

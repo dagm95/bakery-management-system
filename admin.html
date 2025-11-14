@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Bakery App</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-logo">🍰</div>
+        <div class="brand-meta">
+          <div class="brand-title"> Admin</div>
+          <div class="brand-sub">Control panel</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="search" aria-hidden="true">🔎</div>
+        <div class="user">
+          <div class="avatar" title="Admin">A</div>
+          <div class="user-name">Admin</div>
+        </div>
+        <div class="actions"><button id="btnLogout" class="btn ghost">Logout</button></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <div class="logo">Admin</div>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#" data-target="dashboard" class="active">Dashboard</a></li>
+          <li><a href="#" data-target="settings">Settings</a></li>
+          <li><a href="#" data-target="users">Users</a></li>
+          <li><a href="#" data-target="products">Products</a></li>
+          <li><a href="#" data-target="reports">Reports</a></li>
+          <li class="divider" style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.04)"></li>
+
+          <li class="has-children">
+            <a href="#" class="parent">Summaries <span class="caret">▾</span></a>
+            <ul class="subnav">
+              <li><a href="#" data-target="summary-daily">Daily Summary</a></li>
+              <li><a href="#" data-target="summary-weekly">Weekly Summary</a></li>
+              <li><a href="#" data-target="summary-monthly">Monthly Summary</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+      <div class="sidebar-foot">
+        <button id="btnLogoutSide" class="btn">Logout</button>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div id="contentArea">
+        <section class="card">
+          <h2>Welcome, <span id="adminName">Admin</span></h2>
+          <p class="muted">Administrative panel. Use the menu on the left to navigate.</p>
+          <div class="grid">
+            <a class="card-link" href="daily-summary.html">Daily Summaries</a>
+            <a class="card-link" href="cashir.html">Cashier</a>
+            <a class="card-link" href="#" id="manageProducts">Manage Products (placeholder)</a>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Quick stats</h3>
+          <div id="quickStats">Loading…</div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chart.js for dashboard charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script src="admin.js" defer></script>
+</body>
+</html>

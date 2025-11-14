@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Employees / Performance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">👥</div>
+      <h1>Employees / Performance</h1>
+      <a class="back" href="../admin.html">← Back to Admin</a>
+    </div>
+
+    <div class="hero purple">
+      <div class="icon">👥</div>
+      <div class="meta">
+        <h2>Track staff activity and performance</h2>
+        <p>See cashier counts, production logs, role management and basic activity history.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <select><option>All roles</option></select>
+        <input type="date" />
+      </div>
+
+      <div style="height:280px;">
+        <canvas id="chart-employees" class="sample-chart" data-page="employees"></canvas>
+      </div>
+
+      <p class="footer-note">This page can show per-user metrics, recent logins and transaction counts.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

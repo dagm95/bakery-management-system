@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Bakery App</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <main class="login-root">
+    <div class="card">
+      <h1>Sign in</h1>
+      <p class="lead">Choose your role to continue</p>
+      <form id="loginForm" class="login-form" aria-label="Login form">
+        <fieldset>
+          <legend class="sr-only">Roles</legend>
+          <label class="role-row">
+            <input type="radio" name="role" value="admin" />
+            <div class="role-meta"><strong>Admin</strong><span class="muted">Full access to summaries and settings</span></div>
+          </label>
+          <label class="role-row">
+            <input type="radio" name="role" value="cashir" />
+            <div class="role-meta"><strong>Cashir</strong><span class="muted">Point-of-sale (cashier) interface</span></div>
+          </label>
+          <label class="role-row">
+            <input type="radio" name="role" value="manager" />
+            <div class="role-meta"><strong>Bakery Manager</strong><span class="muted">Overview and reports</span></div>
+          </label>
+        </fieldset>
+        <div class="password-group">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter role password" />
+        </div>
+
+        <div class="actions">
+          <button id="loginBtn" class="btn primary" type="submit">Continue</button>
+        </div>
+
+        <div id="loginNotice" class="hint" aria-live="polite"></div>
+      </form>
+
+      <footer class="footer note">Not your device? Use the back button to exit.</footer>
+    </div>
+  </main>
+
+  <script src="login.js" defer></script>
+</body>
+</html>

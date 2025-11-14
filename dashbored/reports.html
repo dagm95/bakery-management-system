@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reports / Business Summaries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">📊</div>
+      <h1>Reports / Business Summaries</h1>
+      <a class="back" href="../admin.html">← Back to Admin</a>
+    </div>
+
+    <div class="hero teal">
+      <div class="icon">📊</div>
+      <div class="meta">
+        <h2>Generate exports and AI-assisted summaries</h2>
+        <p>Auto-summarized daily/weekly/monthly reports with export and email options, plus trend predictions.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <select><option>Daily</option><option>Weekly</option><option>Monthly</option></select>
+        <button>Export</button>
+      </div>
+
+      <div style="height:280px;">
+        <canvas id="chart-reports" class="sample-chart" data-page="reports"></canvas>
+      </div>
+
+      <p class="footer-note">Add a server-side generator or client-side summarizer to populate this area.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

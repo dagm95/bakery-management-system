@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Summary - Bakery</title>
+  <link rel="stylesheet" href="daily-summary.css" />
+  <!--
+    Open this file in your browser to view daily summaries and receipts.
+    It listens for 'salesUpdated' events and localStorage changes to update in real-time.
+    To reset seeded data:
+      localStorage.removeItem('bakery_app_v1'); location.reload();
+  -->
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Daily Summary</div>
+    <div class="top-actions">
+      <a class="btn" href="summaries.html">Dashboard</a>
+      <a class="btn" href="cashier.html">Cashier</a>
+      <input id="searchInput" placeholder="Search receipts, cashier, product..." />
+      <button id="simulateSaleBtn" class="btn">Simulate Sale</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="card filters">
+      <label>Date:
+        <input type="date" id="dateFilter" />
+      </label>
+      <label>Page size:
+        <select id="pageSize"><option>10</option><option selected>50</option><option>100</option></select>
+      </label>
+      <button id="resetDayBtn" class="btn">Reset Day</button>
+      <button id="exportCsvBtn" class="btn">Export CSV</button>
+    </section>
+
+    <section class="card">
+      <h3>Summary Totals</h3>
+      <div class="summary-row">
+        <div>Telebirr: <strong id="teleTotal">0.00 Birr</strong></div>
+        <div>Cash: <strong id="cashTotal">0.00 Birr</strong></div>
+        <div>Bank: <strong id="bankTotal">0.00 Birr</strong></div>
+        <div>Overall: <strong id="overallTotal">0.00 Birr</strong></div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+        <canvas id="paymentChart" width="400" height="220"></canvas>
+        <canvas id="cashierChart" width="400" height="220"></canvas>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Receipts</h3>
+      <div id="receiptsTableWrap">
+        <table id="receiptsTable" class="table">
+          <thead><tr><th>Receipt #</th><th>Cashier</th><th>Payment</th><th>Time</th><th>Total</th><th>Action</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button id="prevPage" class="btn">Prev</button>
+        <span id="pageInfo">Page 1</span>
+        <button id="nextPage" class="btn">Next</button>
+      </div>
+    </section>
+
+    <!-- receipt modal -->
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-inner">
+        <div class="modal-header"><h3>Receipt Details</h3><button id="closeModal" class="btn">Close</button></div>
+        <div id="modalBody"></div>
+        <div class="modal-actions">
+          <button id="printBtn" class="btn">Print</button>
+          <button id="downloadBtn" class="btn">Download</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer"><small>Bakery daily summary (local-only)</small></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="data-seed.js"></script>
+  <script src="daily-summary.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Expenses / Cost Tracking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">💳</div>
+      <h1>Expenses / Cost Tracking</h1>
+      <a class="back" href="../admin.html">← Back to Admin</a>
+    </div>
+
+    <div class="hero yellow">
+      <div class="icon">💳</div>
+      <div class="meta">
+        <h2>Review logged expenses and categorize costs</h2>
+        <p>Track ingredient purchases, utilities and maintenance. Visualize expense distribution.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <select><option>All categories</option></select>
+        <input type="date" />
+      </div>
+
+      <div style="height:280px;">
+        <canvas id="chart-expenses" class="sample-chart" data-page="expenses"></canvas>
+      </div>
+
+      <p class="footer-note">Associate expenses with profit analytics to show margin impacts.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weekly Summaries</title>
+    <link rel="stylesheet" href="cashir.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="brand"><div class="title">Weekly Summaries</div></div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn" href="cashir.html">Back to Cashier</a>
+        <a class="btn" href="daily-summary.html">Daily</a>
+        <a class="btn" href="monthly-summary.html">Monthly</a>
+      </div>
+    </div>
+
+    <main class="page" style="padding:20px;">
+      <div class="card">
+        <div class="section-title">Saved Weekly Summaries</div>
+        <div id="savedWeeklyList" style="max-height:360px;overflow:auto;padding-top:8px;color:var(--muted)">Loading...</div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="section-title">Week Details</div>
+        <div id="weekHeader" style="margin-bottom:8px;color:var(--muted)">Select a week to view details</div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <div style="min-width:160px">
+            <div style="font-size:13px;color:var(--muted)">Telebirr</div>
+            <div id="w-tele" style="font-weight:700">0 — 0.00 Birr</div>
+          </div>
+          <div style="min-width:160px">
+            <div style="font-size:13px;color:var(--muted)">Cash</div>
+            <div id="w-cash" style="font-weight:700">0 — 0.00 Birr</div>
+          </div>
+          <div style="min-width:160px">
+            <div style="font-size:13px;color:var(--muted)">Bank</div>
+            <div id="w-bank" style="font-weight:700">0 — 0.00 Birr</div>
+          </div>
+          <div style="margin-left:auto">
+            <button class="btn" id="downloadWeekBtn">Download Week</button>
+          </div>
+        </div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px dashed #e6eef8" />
+        <div style="font-weight:600;margin-bottom:6px">Receipts for selected week</div>
+        <div id="weekReceipts" style="max-height:260px;overflow:auto;color:var(--muted);font-size:13px">No week selected</div>
+
+        <div style="font-weight:600;margin-top:10px">Product / Variant breakdown</div>
+        <div id="weekProdBreakdown" style="max-height:220px;overflow:auto;color:var(--muted);font-size:13px">No items</div>
+      </div>
+    </main>
+
+    <script src="weekly-summary.js"></script>
+  </body>
+</html>

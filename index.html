@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>QR CODE</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Use ESM builds from a provider like esm.sh or skypack/unpkg with ?module -->
+    <script type="module">
+      import React, { useEffect, useState } from 'https://esm.sh/react@18';
+      import { createRoot } from 'https://esm.sh/react-dom@18/client';
+      import { toDataURL } from 'https://esm.sh/qrcode@1.5.1';
+      import './app.css'; // ensure file path is correct relative to this file
+
+      function App() {
+        const [temp, setTemp] = useState('');
+        const [word, setWord] = useState('');
+        const [size, setSize] = useState('400');
+        const [bgcolor, setBGcolor] = useState('#ffffff');
+        const [qrSrc, setQrSrc] = useState('');
+
+        useEffect(() => {
+          let cancelled = false;
+
+          async function generate() {
+            try {
+              const text = (word && word.trim()) || (temp && temp.trim()) || 'Hello';
+              const opts = {
+                width: Number(size) || 400,
+                color: {
+                  dark: '#000000',
+                  light: bgcolor || '#ffffff'
+                }
+              };
+
+              const dataUrl = await toDataURL(text, opts);
+              if (!cancelled) setQrSrc(dataUrl);
+            } catch (err) {
+              console.error('QR generation failed', err);
+            }
+          }
+
+          generate();
+          return () => { cancelled = true; };
+        }, [temp, word, size, bgcolor]);
+
+        return React.createElement('div', { className: 'app' },
+          React.createElement('h1', null, 'QR Code Generator'),
+
+          React.createElement('div', null,
+            React.createElement('label', null, 'Text: '),
+            React.createElement('input', {
+              value: temp,
+              onChange: e => setTemp(e.target.value),
+              placeholder: 'Text to encode',
+              style: { width: '60%' }
+            })
+          ),
+
+          React.createElement('div', { style: { marginTop: '6px' } },
+            React.createElement('label', null, 'Or word: '),
+            React.createElement('input', {
+              value: word,
+              onChange: e => setWord(e.target.value),
+              placeholder: 'Alternate text',
+              style: { width: '60%' }
+            })
+          ),
+
+          React.createElement('div', { style: { marginTop: '6px' } },
+            React.createElement('label', null, 'Size: '),
+            React.createElement('input', {
+              type: 'number',
+              min: '50',
+              max: '2000',
+              value: size,
+              onChange: e => setSize(e.target.value)
+            })
+          ),
+
+          React.createElement('div', { style: { marginTop: '6px' } },
+            React.createElement('label', null, 'Background: '),
+            React.createElement('input', {
+              type: 'color',
+              value: bgcolor,
+              onChange: e => setBGcolor(e.target.value)
+            })
+          ),
+
+          React.createElement('div', { style: { marginTop: '12px' } },
+            qrSrc
+              ? React.createElement('img', { src: qrSrc, alt: 'QR code', width: Number(size) || 200 })
+              : React.createElement('p', null, 'Generating...')
+          )
+        );
+      }
+
+      const root = createRoot(document.getElementById('root'));
+      root.render(React.createElement(App));
+    </script>
+  </body>
+</html>

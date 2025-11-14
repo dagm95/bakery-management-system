@@ -87,5 +87,105 @@ public class BakeryDbContext : DbContext
                 IsActive = true
             }
         );
+
+        // Seed sample products
+        modelBuilder.Entity<Product>().HasData(
+            new Product
+            {
+                Id = 1,
+                Name = "Croissant",
+                Description = "Buttery, flaky French pastry",
+                Price = 3.50m,
+                StockQuantity = 50,
+                Category = "Pastries",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = true
+            },
+            new Product
+            {
+                Id = 2,
+                Name = "Baguette",
+                Description = "Traditional French bread",
+                Price = 2.75m,
+                StockQuantity = 30,
+                Category = "Breads",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = true
+            },
+            new Product
+            {
+                Id = 3,
+                Name = "Chocolate Cake",
+                Description = "Rich chocolate layer cake",
+                Price = 25.00m,
+                StockQuantity = 10,
+                Category = "Cakes",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = true
+            },
+            new Product
+            {
+                Id = 4,
+                Name = "Blueberry Muffin",
+                Description = "Moist muffin with fresh blueberries",
+                Price = 2.50m,
+                StockQuantity = 40,
+                Category = "Pastries",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = true
+            },
+            new Product
+            {
+                Id = 5,
+                Name = "Sourdough Loaf",
+                Description = "Artisan sourdough bread",
+                Price = 5.50m,
+                StockQuantity = 20,
+                Category = "Breads",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = true
+            },
+            new Product
+            {
+                Id = 6,
+                Name = "Chocolate Chip Cookie",
+                Description = "Classic cookie with chocolate chips",
+                Price = 1.50m,
+                StockQuantity = 100,
+                Category = "Cookies",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = true
+            },
+            new Product
+            {
+                Id = 7,
+                Name = "Danish Pastry",
+                Description = "Sweet pastry with fruit filling",
+                Price = 3.25m,
+                StockQuantity = 35,
+                Category = "Pastries",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = true
+            },
+            new Product
+            {
+                Id = 8,
+                Name = "Cinnamon Roll",
+                Description = "Soft roll with cinnamon and icing",
+                Price = 4.00m,
+                StockQuantity = 25,
+                Category = "Pastries",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = true
+            }
+        );
     }
 }
